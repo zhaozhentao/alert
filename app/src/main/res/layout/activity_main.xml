@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/fragments"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"/>
 
-</RelativeLayout>
+    <RadioGroup
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp">
+        <RadioButton
+            android:id="@+id/message"
+            style="@style/home_tab_item"
+            android:checked="true"
+            android:text="消息管理"/>
+
+        <RadioButton
+            android:id="@+id/manager"
+            style="@style/home_tab_item"
+            android:text="综合管理"/>
+
+        <RadioButton
+            android:id="@+id/profile"
+            style="@style/home_tab_item"
+            android:text="我的"/>
+    </RadioGroup>
+</LinearLayout>
