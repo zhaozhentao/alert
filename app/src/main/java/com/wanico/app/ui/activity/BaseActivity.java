@@ -26,6 +26,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         AppManager.getInstance().addActivity(this);
         setContentView(getLayoutResourceId());
+        View back = findViewById(R.id.back);
+        if (back != null) {
+            back.setOnClickListener(view -> onBackPressed());
+        }
 
         onActivityCreate();
     }
@@ -63,5 +67,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         displayingFragment = fragment;
         transaction.show(fragment);
         transaction.commit();
+    }
+
+    protected void setOnClickListeners(int[] ids, View.OnClickListener listener) {
+        for (int id : ids) {
+            findViewById(id).setOnClickListener(listener);
+        }
     }
 }

@@ -31,4 +31,10 @@ public abstract class BaseFragment extends Fragment {
     public <T extends View> T findViewById(@IdRes int id) {
         return rootView.findViewById(id);
     }
+
+    protected void setOnClickListeners(int[] ids, View.OnClickListener listener) {
+        for (int id : ids) {
+            findViewById(id).setOnClickListener(listener);
+        }
+    }
 }

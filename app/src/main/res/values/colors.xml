@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="orange">#e9a944</color>
+    <color name="label_text_gray">#888888</color>
+    <color name="gray">#ffcccccc</color>
+    <color name="black">#ff000000</color>
 </resources>
