@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">base</string>
+    <string name="defualt_error">Network Exception，Please check the network</string>
+    <string name="timeout_error">Network Exception，Please check the network</string>
+    <string name="no_connecttion_error">Network Exception，Failed to connect</string>
+    <string name="auth_failure_error">Invalid login information, please login again</string>
+    <string name="server_error">Network Exception，Server error</string>
+    <string name="network_error">Network unavailable</string>
+    <string name="parse_error">Data Parsing Error</string>
+    <string name="response_null">The requested data is empty</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="g_image_loader_uri">g_image_loader_uri</string>
+</resources>
