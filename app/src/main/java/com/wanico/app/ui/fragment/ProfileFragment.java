@@ -27,6 +27,11 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
         startActivity(intent);
     }
 
+    private void 系统设置() {
+        Intent intent = new Intent(getActivity(), SettingsActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -37,6 +42,7 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
             case R.id.clear:
                 break;
             case R.id.settings:
+                系统设置();
                 break;
             case R.id.about_us:
                 关于我们();

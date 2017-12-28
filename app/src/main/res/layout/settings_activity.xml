@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        style="@style/action_bar_container">
+        <TextView
+            android:id="@+id/back"
+            style="@style/action_back"
+            android:text="@string/back"/>
+
+        <TextView
+            style="@style/action_bar_title"
+            android:text="@string/settings"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_button"
+        android:layout_marginTop="16dp">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="@string/clear"/>
+
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:layout_alignParentEnd="true"
+            android:text="清除"
+            android:textColor="@android:color/holo_orange_light"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/wrap_width_wrap_height"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="将应用还原到刚安装状态"
+        android:textColor="@color/gray"/>
+
+    <RelativeLayout
+        style="@style/item_button"
+        android:layout_marginTop="16dp">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="@string/receive_notice"/>
+
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:layout_alignParentEnd="true"
+            android:text="已开启"
+            android:textColor="@android:color/holo_orange_light"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_button">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="@string/voice"/>
+
+        <CheckBox
+            style="@style/wrap_width_wrap_height"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/item_button">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="@string/zhendong"/>
+
+        <CheckBox
+            style="@style/wrap_width_wrap_height"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/wrap_width_wrap_height"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/voice_or_not"
+        android:textColor="@color/gray"/>
+
+    <Button
+        style="@style/full_width_wrap_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_blue"
+        android:text="@string/logout"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

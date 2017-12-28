@@ -18,6 +18,11 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
+    <style name="wrap_width_wrap_height">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
     <style name="home_tab_item">
         <item name="android:layout_width">0px</item>
         <item name="android:layout_height">wrap_content</item>
@@ -69,5 +74,13 @@
         <item name="android:layout_width">1px</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/gray</item>
+    </style>
+
+    <style name="item_button" parent="full_width_wrap_height">
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/btn_item</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
     </style>
 </resources>

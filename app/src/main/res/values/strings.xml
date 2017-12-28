@@ -4,4 +4,11 @@
     <string name="kefu">联系客服</string>
     <string name="back">返回</string>
     <string name="about_us">关于我们</string>
+    <string name="settings">系统设置</string>
+    <string name="clear">清除应用缓存</string>
+    <string name="receive_notice">接受消息通知</string>
+    <string name="voice">声音</string>
+    <string name="zhendong">震动</string>
+    <string name="voice_or_not">此应用在运行时，设置是否需要声音或震动</string>
+    <string name="logout">退出登录</string>
 </resources>
