@@ -8,6 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="full_width_wrap_height">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="full_height_wrap_width">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
     <style name="home_tab_item">
         <item name="android:layout_width">0px</item>
         <item name="android:layout_height">wrap_content</item>
@@ -19,9 +29,7 @@
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="profile_item">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="profile_item" parent="full_width_wrap_height">
         <item name="android:textSize">16dp</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:paddingLeft">16dp</item>
@@ -42,14 +50,24 @@
         <item name="android:layout_centerInParent">true</item>
     </style>
 
-    <style name="action_back">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
+    <style name="action_back" parent="full_height_wrap_width">
         <item name="android:gravity">center</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:drawableLeft">@mipmap/lreturn</item>
         <item name="android:drawablePadding">8dp</item>
+    </style>
+
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+
+    <style name="v_line">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/gray</item>
     </style>
 </resources>
