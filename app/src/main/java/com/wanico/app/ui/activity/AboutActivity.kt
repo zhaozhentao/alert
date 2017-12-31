@@ -1,4 +1,4 @@
-package com.wanico.app.ui.fragment
+package com.wanico.app.ui.activity
 
 import android.Manifest
 import android.content.Intent

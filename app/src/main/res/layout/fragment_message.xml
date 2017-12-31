@@ -3,7 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="@color/bg"
     android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        style="@style/action_bar_container">
+        <TextView
+            style="@style/action_bar_title"
+            android:text="@string/message_manager"/>
+    </RelativeLayout>
 
+    <ListView
+        android:id="@+id/list"
+        style="@style/full_width_full_height"
+        android:divider="@null"/>
 </LinearLayout>

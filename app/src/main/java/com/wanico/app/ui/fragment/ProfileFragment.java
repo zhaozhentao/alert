@@ -5,6 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.wanico.app.R;
+import com.wanico.app.ui.activity.AboutActivity;
+import com.wanico.app.ui.activity.ResetPasswordActivity;
+import com.wanico.app.ui.activity.SettingsActivity;
 
 /**
  * Created by zhaotao on 2017/12/27.
