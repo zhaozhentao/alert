@@ -21,5 +21,6 @@
         </activity>
         <activity android:name=".ui.fragment.AboutActivity"/>
         <activity android:name=".ui.fragment.SettingsActivity"/>
+        <activity android:name=".ui.fragment.ResetPasswordActivity"/>
     </application>
 </manifest>

@@ -4,6 +4,7 @@
     <string name="kefu">联系客服</string>
     <string name="back">返回</string>
     <string name="about_us">关于我们</string>
+    <string name="reset_password">修改密码</string>
     <string name="settings">系统设置</string>
     <string name="clear">清除应用缓存</string>
     <string name="receive_notice">接受消息通知</string>
@@ -11,4 +12,11 @@
     <string name="zhendong">震动</string>
     <string name="voice_or_not">此应用在运行时，设置是否需要声音或震动</string>
     <string name="logout">退出登录</string>
+    <string name="input_your_old_password">请输入您的原密码</string>
+    <string name="old_password">原密码</string>
+    <string name="new_password">新密码</string>
+    <string name="new_password_confirm">新密码确认</string>
+    <string name="confirm">确认</string>
+    <string name="input_tips">请输入6-15位数字或字母密码</string>
+    <string name="confirm_your_new_password">确认您的新密码</string>
 </resources>

@@ -32,10 +32,16 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
         startActivity(intent);
     }
 
+    private void 修改密码() {
+        Intent intent = new Intent(getActivity(), ResetPasswordActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.reset_password:
+                修改密码();
                 break;
             case R.id.bind:
                 break;
