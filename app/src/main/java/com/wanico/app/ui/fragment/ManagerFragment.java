@@ -1,5 +1,6 @@
 package com.wanico.app.ui.fragment;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -24,14 +25,22 @@ public class ManagerFragment extends BaseFragment implements View.OnClickListene
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.car_query:
+            case R.id.car_query: {
+                startActivity(new Intent(getActivity(), CarQueryActivity.class));
                 break;
-            case R.id.driver_query:
+            }
+            case R.id.driver_query: {
+                startActivity(new Intent(getActivity(), DriverQueryActivity.class));
                 break;
-            case R.id.add_duka:
+            }
+            case R.id.add_duka: {
+                startActivity(new Intent(getActivity(), AddDukaActivity.class));
                 break;
-            case R.id.duka_manager:
+            }
+            case R.id.duka_manager: {
+                startActivity(new Intent(getActivity(), DukaManagerActivity.class));
                 break;
+            }
         }
     }
 }

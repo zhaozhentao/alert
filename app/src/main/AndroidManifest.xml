@@ -23,5 +23,9 @@
         <activity android:name=".ui.activity.AboutActivity"/>
         <activity android:name=".ui.activity.SettingsActivity"/>
         <activity android:name=".ui.activity.ResetPasswordActivity"/>
+        <activity android:name=".ui.fragment.CarQueryActivity"/>
+        <activity android:name=".ui.fragment.DriverQueryActivity"/>
+        <activity android:name=".ui.fragment.AddDukaActivity"/>
+        <activity android:name=".ui.fragment.DukaManagerActivity"/>
     </application>
 </manifest>
