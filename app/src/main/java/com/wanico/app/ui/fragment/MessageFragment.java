@@ -4,9 +4,12 @@ import android.view.LayoutInflater;
 import android.widget.ListView;
 
 import com.wanico.app.R;
+import com.wanico.app.model.Notice;
 import com.wanico.app.ui.adapter.MessageAdapter;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by zhaotao on 2017/12/27.
@@ -15,7 +18,7 @@ import java.util.ArrayList;
 public class MessageFragment extends BaseFragment {
 
     private MessageAdapter adapter;
-    private ArrayList<String> data;
+    private List<Notice> data = new ArrayList<>();
 
     @Override
     protected int getLayoutResourceId() {
@@ -24,13 +27,16 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     protected void onCreateView(LayoutInflater inflater) {
-        data = new ArrayList<>();
-        data.add("1");
-        data.add("1");
-        data.add("1");
+        加载历史消息();
         adapter = new MessageAdapter(getActivity(), data);
 
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
+    }
+
+    private void 加载历史消息() {
+        getDao().getNoticeDao().insert(new Notice(null, "content", new Date()));
+        List<Notice> list = getDao().getNoticeDao().queryBuilder().list();
+        data.addAll(list);
     }
 }

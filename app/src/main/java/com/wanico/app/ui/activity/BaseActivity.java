@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.umeng.analytics.MobclickAgent;
+import com.wanico.app.App;
 import com.wanico.app.R;
+import com.wanico.app.model.DaoSession;
 
 import base.AppManager;
 
@@ -73,5 +75,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         for (int id : ids) {
             findViewById(id).setOnClickListener(listener);
         }
+    }
+
+    public DaoSession getDao() {
+        return ((App) getApplication()).getDaoSession();
     }
 }

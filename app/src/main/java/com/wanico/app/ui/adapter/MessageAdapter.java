@@ -9,9 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wanico.app.R;
+import com.wanico.app.model.Notice;
 import com.wanico.app.ui.fragment.BaseHolder;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by zhaotao on 2017/12/31.
@@ -20,9 +21,9 @@ import java.util.ArrayList;
 public class MessageAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
-    private ArrayList<String> data;
+    private List<Notice> data;
 
-    public MessageAdapter(Activity activity, ArrayList<String> data) {
+    public MessageAdapter(Activity activity, List<Notice> data) {
         inflater = LayoutInflater.from(activity);
         this.data = data;
     }
@@ -63,14 +64,14 @@ public class MessageAdapter extends BaseAdapter {
             avatar = root.findViewById(R.id.avatar);
             content = root.findViewById(R.id.content);
             time = root.findViewById(R.id.time);
-            root.setOnClickListener(v -> {
-            });
         }
 
         @Override
         public void refresh(int i) {
-            content.setText("content");
-            time.setText("time");
+            Notice notice = data.get(i);
+
+            content.setText(notice.content);
+            time.setText(notice.getCreated_at() + "");
         }
     }
 }

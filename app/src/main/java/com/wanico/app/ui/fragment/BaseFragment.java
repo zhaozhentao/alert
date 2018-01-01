@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wanico.app.model.DaoSession;
+import com.wanico.app.ui.activity.BaseActivity;
+
 /**
  * Created by zhaotao on 2017/11/24.
  */
@@ -36,5 +39,9 @@ public abstract class BaseFragment extends Fragment {
         for (int id : ids) {
             findViewById(id).setOnClickListener(listener);
         }
+    }
+
+    protected DaoSession getDao() {
+        return ((BaseActivity)getActivity()).getDao();
     }
 }
