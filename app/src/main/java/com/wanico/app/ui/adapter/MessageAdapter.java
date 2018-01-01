@@ -48,6 +48,7 @@ public class MessageAdapter extends BaseAdapter {
         BaseHolder holder;
         if (view == null) {
             holder = new Holder(view = inflater.inflate(R.layout.item_message, null, false));
+            view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
         }

@@ -108,4 +108,10 @@
         <item name="android:paddingLeft">32dp</item>
         <item name="android:textSize">16dp</item>
     </style>
+
+    <style name="manager_item" parent="full_width_wrap_height">
+        <item name="android:textSize">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
 </resources>

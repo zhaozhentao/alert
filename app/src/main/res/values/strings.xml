@@ -20,4 +20,8 @@
     <string name="input_tips">请输入6-15位数字或字母密码</string>
     <string name="confirm_your_new_password">确认您的新密码</string>
     <string name="message_manager">消息管理</string>
+    <string name="car_query">车辆信息查询</string>
+    <string name="driver_query">行驶轨迹查询</string>
+    <string name="add_duka">新增读卡器</string>
+    <string name="duka_manager">读卡器信息管理</string>
 </resources>

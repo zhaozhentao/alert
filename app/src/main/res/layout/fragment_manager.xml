@@ -3,7 +3,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
     android:orientation="vertical">
+    <TextView
+        android:id="@+id/car_query"
+        style="@style/manager_item"
+        android:text="@string/car_query"/>
 
+    <TextView
+        android:id="@+id/driver_query"
+        style="@style/manager_item"
+        android:text="@string/driver_query"/>
+
+    <TextView
+        android:id="@+id/add_duka"
+        style="@style/manager_item"
+        android:text="@string/add_duka"/>
+
+    <TextView
+        android:id="@+id/duka_manager"
+        style="@style/manager_item"
+        android:text="@string/duka_manager"/>
 </LinearLayout>
