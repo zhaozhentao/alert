@@ -4,5 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        style="@style/action_bar_container">
+        <TextView
+            android:id="@+id/back"
+            style="@style/action_back"
+            android:text="@string/back"/>
+
+        <TextView
+            style="@style/action_bar_title"
+            android:text="@string/duka_manager"/>
+    </RelativeLayout>
 
 </LinearLayout>

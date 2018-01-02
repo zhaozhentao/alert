@@ -24,4 +24,18 @@
     <string name="driver_query">行驶轨迹查询</string>
     <string name="add_duka">新增读卡器</string>
     <string name="duka_manager">读卡器信息管理</string>
+    <string name="get_location">获取当前位置信息</string>
+    <string name="province">省*</string>
+    <string name="city">市*</string>
+    <string name="qu">区/县*</string>
+    <string name="zhen">镇*</string>
+    <string name="address">地址*</string>
+    <string name="jingdu">经度*</string>
+    <string name="weidu">维度*</string>
+    <string name="bianhao">读卡器编号*</string>
+    <string name="quyuma">区域码*</string>
+    <string name="yingjianid">硬件Id*</string>
+    <string name="suoshubumen">所属部门*</string>
+    <string name="guanlirenyuan">管理人员*</string>
+    <string name="remark">备注*</string>
 </resources>

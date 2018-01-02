@@ -4,5 +4,170 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        style="@style/action_bar_container">
+        <TextView
+            android:id="@+id/back"
+            style="@style/action_back"
+            android:text="@string/back"/>
 
+        <TextView
+            style="@style/action_bar_title"
+            android:text="@string/add_duka"/>
+    </RelativeLayout>
+
+    <ScrollView
+        style="@style/full_width_full_height">
+        <LinearLayout
+            style="@style/full_width_wrap_height"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/get_location"
+                style="@style/full_width_wrap_height"
+                android:text="@string/get_location"/>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/province"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/city"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/city"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/qu"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/zhen"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/address"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/jingdu"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/weidu"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/bianhao"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/quyuma"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/yingjianid"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/suoshubumen"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/guanlirenyuan"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/add_duka_item">
+                <TextView
+                    style="@style/add_duka_title"
+                    android:text="@string/remark"/>
+
+                <EditText
+                    style="@style/add_duka_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
