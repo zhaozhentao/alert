@@ -38,4 +38,11 @@
     <string name="suoshubumen">所属部门*</string>
     <string name="guanlirenyuan">管理人员*</string>
     <string name="remark">备注*</string>
+    <string name="query">条件搜索*</string>
+    <string name="status">读卡器状态</string>
+    <string name="anzhuang_status">安装状态</string>
+    <string name="anzhuang_start_time">安装开始日期</string>
+    <string name="anzhuang_start_end">安装结束日期</string>
+    <string name="keyword">关键字</string>
+    <string name="do_query">查询</string>
 </resources>

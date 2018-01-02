@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        style="@style/full_width_wrap_height"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/query_dialog_title"
+            android:text="@string/bianhao"/>
+
+        <EditText
+            style="@style/query_dialog_edit"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/full_width_wrap_height"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/query_dialog_title"
+            android:text="@string/quyuma"/>
+
+        <EditText
+            style="@style/query_dialog_edit"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/full_width_wrap_height"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/query_dialog_title"
+            android:text="@string/status"/>
+
+        <EditText
+            style="@style/query_dialog_edit"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/full_width_wrap_height"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/query_dialog_title"
+            android:text="@string/anzhuang_status"/>
+
+        <EditText
+            style="@style/query_dialog_edit"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/full_width_wrap_height"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/query_dialog_title"
+            android:text="@string/anzhuang_start_time"/>
+
+        <EditText
+            style="@style/query_dialog_edit"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/full_width_wrap_height"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/query_dialog_title"
+            android:text="@string/anzhuang_start_end"/>
+
+        <EditText
+            style="@style/query_dialog_edit"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/full_width_wrap_height"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/query_dialog_title"
+            android:text="@string/keyword"/>
+
+        <EditText
+            style="@style/query_dialog_edit"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/do_query"
+        style="@style/full_width_wrap_height"
+        android:text="@string/do_query"/>
+</LinearLayout>

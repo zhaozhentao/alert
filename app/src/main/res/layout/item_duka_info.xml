@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/bianhao"
+        style="@style/wrap_width_wrap_height"
+        tools:text="编号:"/>
+
+    <TextView
+        android:id="@+id/anzhuang_time"
+        style="@style/wrap_width_wrap_height"
+        tools:text="安装时间:"/>
+
+    <TextView
+        android:id="@+id/status"
+        style="@style/wrap_width_wrap_height"
+        tools:text="状态:"/>
+
+    <TextView
+        android:id="@+id/guanliren"
+        style="@style/wrap_width_wrap_height"
+        tools:text="管理人:"/>
+
+    <TextView
+        android:id="@+id/phone"
+        style="@style/wrap_width_wrap_height"
+        tools:text="手机号:"/>
+
+    <TextView
+        android:id="@+id/quyuma"
+        style="@style/wrap_width_wrap_height"
+        tools:text="区域码:"/>
+
+    <TextView
+        android:id="@+id/address"
+        style="@style/wrap_width_wrap_height"
+        tools:text="地址:"/>
+</LinearLayout>
