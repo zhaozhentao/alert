@@ -18,12 +18,8 @@
 
         <TextView
             android:id="@+id/query"
-            style="@style/wrap_width_match_height"
-            android:layout_alignParentRight="true"
-            android:gravity="center_vertical"
-            android:paddingRight="16dp"
-            android:text="@string/query"
-            android:textColor="@android:color/white"/>
+            style="@style/action_bar_right"
+            android:text="@string/query"/>
     </RelativeLayout>
 
     <ListView

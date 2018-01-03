@@ -17,7 +17,8 @@
             android:text="@string/driver_query"/>
 
         <TextView
-            style="@style/wrap_width_wrap_height"/>
+            android:id="@+id/query"
+            style="@style/action_bar_right"
+            android:text="@string/tiaojian_query"/>
     </RelativeLayout>
-
 </LinearLayout>

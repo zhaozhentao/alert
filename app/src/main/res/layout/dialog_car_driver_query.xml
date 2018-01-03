@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/match_width_match_height"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <LinearLayout
+        style="@style/match_width_wrap_height"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="@string/chepai_rfid"/>
+
+        <EditText
+            style="@style/match_width_wrap_height"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_width_wrap_height"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="@string/begin_date"/>
+
+        <EditText
+            style="@style/match_width_wrap_height"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_width_wrap_height"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="@string/end_date"/>
+
+        <EditText
+            style="@style/match_width_wrap_height"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_width_wrap_height"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="@string/end_time"/>
+
+        <EditText
+            style="@style/match_width_wrap_height"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/query"
+        style="@style/match_width_wrap_height"
+        android:text="@string/full_info"/>
+</LinearLayout>
