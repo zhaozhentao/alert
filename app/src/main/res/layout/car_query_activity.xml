@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -17,4 +18,151 @@
             android:text="@string/car_query"/>
     </RelativeLayout>
 
+    <ScrollView
+        style="@style/full_width_full_height">
+        <LinearLayout
+            style="@style/full_width_wrap_height"
+            android:orientation="vertical">
+            <LinearLayout
+                style="@style/full_width_wrap_height"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/full_height_wrap_width"
+                    android:gravity="center_vertical"
+                    android:text="@string/chepai_rfid"
+                    android:textSize="16dp"/>
+
+                <EditText
+                    android:id="@+id/id"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/query"
+                    style="@style/full_height_wrap_width"
+                    android:text="@string/car_info_query"/>
+            </LinearLayout>
+
+            <FrameLayout
+                style="@style/full_width_wrap_height"
+                android:layout_height="180dp"/>
+
+            <LinearLayout
+                style="@style/full_width_wrap_height"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/rfid"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="rfid区位码"/>
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="车主姓名"/>
+
+                <TextView
+                    android:id="@+id/phone"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="车主手机号:"/>
+
+                <TextView
+                    android:id="@+id/home_phone"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="家庭电话:"/>
+
+                <TextView
+                    android:id="@+id/id_card"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="身份证"/>
+
+                <TextView
+                    android:id="@+id/id_address"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="身份证地址"/>
+
+                <TextView
+                    android:id="@+id/address"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="家庭地址:"/>
+
+                <TextView
+                    android:id="@+id/rfid_num"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="rfid号"/>
+
+                <TextView
+                    android:id="@+id/car_num"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="车牌"/>
+
+                <TextView
+                    android:id="@+id/car_type"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="车型号"/>
+
+                <TextView
+                    android:id="@+id/car_color"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="车颜色:"/>
+
+                <TextView
+                    android:id="@+id/car_brand"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="电动车品牌:"/>
+
+                <TextView
+                    android:id="@+id/dianji_num"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="电机号:"/>
+
+                <TextView
+                    android:id="@+id/chejiahao"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="车架号:"/>
+
+                <TextView
+                    android:id="@+id/dianliang"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="rfid电量:"/>
+
+                <TextView
+                    android:id="@+id/buy_date"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="购买日期:"/>
+
+                <TextView
+                    android:id="@+id/anzhuang_time"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="安装日期:"/>
+
+                <TextView
+                    android:id="@+id/buy_address"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="购买地址:"/>
+
+                <TextView
+                    android:id="@+id/buy_price"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="购买价格:"/>
+
+                <TextView
+                    android:id="@+id/depart"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="登记部门:"/>
+
+                <TextView
+                    android:id="@+id/dengjiren"
+                    style="@style/wrap_width_wrap_height"
+                    tools:text="登记人:"/>
+
+                <EditText
+                    android:id="@+id/remark"
+                    style="@style/full_width_wrap_height"
+                    android:layout_height="50dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
