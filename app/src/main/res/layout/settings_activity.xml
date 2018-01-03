@@ -82,7 +82,7 @@
         android:textColor="@color/gray"/>
 
     <Button
-        style="@style/full_width_wrap_height"
+        style="@style/match_width_wrap_height"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"

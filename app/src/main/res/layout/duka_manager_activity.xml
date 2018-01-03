@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/query"
-            style="@style/full_height_wrap_width"
+            style="@style/wrap_width_match_height"
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
             android:paddingRight="16dp"
@@ -28,6 +28,6 @@
 
     <ListView
         android:id="@+id/list"
-        style="@style/full_width_full_height"
+        style="@style/match_width_match_height"
         android:divider="@null"/>
 </LinearLayout>

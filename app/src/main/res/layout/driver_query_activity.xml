@@ -15,6 +15,9 @@
         <TextView
             style="@style/action_bar_title"
             android:text="@string/driver_query"/>
+
+        <TextView
+            style="@style/wrap_width_wrap_height"/>
     </RelativeLayout>
 
 </LinearLayout>

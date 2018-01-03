@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    style="@style/full_width_wrap_height"
+    style="@style/match_width_wrap_height"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
     <TextView
         android:id="@+id/time"
-        style="@style/full_width_wrap_height"
+        style="@style/match_width_wrap_height"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:textColor="#666872"
         tools:text="2016-08-10 10:21:21"/>
 
     <LinearLayout
-        style="@style/full_width_wrap_height"
+        style="@style/match_width_wrap_height"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
         android:paddingLeft="16dp"

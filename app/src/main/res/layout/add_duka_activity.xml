@@ -18,15 +18,15 @@
     </RelativeLayout>
 
     <ScrollView
-        style="@style/full_width_full_height">
+        style="@style/match_width_match_height">
         <LinearLayout
-            style="@style/full_width_wrap_height"
+            style="@style/match_width_wrap_height"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:orientation="vertical">
             <Button
                 android:id="@+id/get_location"
-                style="@style/full_width_wrap_height"
+                style="@style/match_width_wrap_height"
                 android:text="@string/get_location"/>
 
             <LinearLayout

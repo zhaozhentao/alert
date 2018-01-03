@@ -19,17 +19,17 @@
     </RelativeLayout>
 
     <ScrollView
-        style="@style/full_width_full_height">
+        style="@style/match_width_match_height">
         <LinearLayout
-            style="@style/full_width_wrap_height"
+            style="@style/match_width_wrap_height"
             android:orientation="vertical">
             <LinearLayout
-                style="@style/full_width_wrap_height"
+                style="@style/match_width_wrap_height"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
-                    style="@style/full_height_wrap_width"
+                    style="@style/wrap_width_match_height"
                     android:gravity="center_vertical"
                     android:text="@string/chepai_rfid"
                     android:textSize="16dp"/>
@@ -42,16 +42,16 @@
 
                 <Button
                     android:id="@+id/query"
-                    style="@style/full_height_wrap_width"
+                    style="@style/wrap_width_match_height"
                     android:text="@string/car_info_query"/>
             </LinearLayout>
 
             <FrameLayout
-                style="@style/full_width_wrap_height"
+                style="@style/match_width_wrap_height"
                 android:layout_height="180dp"/>
 
             <LinearLayout
-                style="@style/full_width_wrap_height"
+                style="@style/match_width_wrap_height"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/rfid"
@@ -160,7 +160,7 @@
 
                 <EditText
                     android:id="@+id/remark"
-                    style="@style/full_width_wrap_height"
+                    style="@style/match_width_wrap_height"
                     android:layout_height="50dp"/>
             </LinearLayout>
         </LinearLayout>

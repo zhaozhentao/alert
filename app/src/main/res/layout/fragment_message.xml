@@ -15,6 +15,6 @@
 
     <ListView
         android:id="@+id/list"
-        style="@style/full_width_full_height"
+        style="@style/match_width_match_height"
         android:divider="@null"/>
 </LinearLayout>
