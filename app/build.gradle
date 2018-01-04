@@ -6,7 +6,7 @@ android {
     compileSdkVersion 27
     
     defaultConfig {
-        applicationId "com.wanico.app"
+        applicationId "com.rctd.platfrom.rcpingan"
         minSdkVersion 17
         targetSdkVersion 27
         versionCode 8
@@ -16,10 +16,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file { "../key/key" }
-            storePassword "wanicoapp"
-            keyAlias "wanicoapp"
-            keyPassword "wanicoapp"
+            storeFile file { "../key/android.key" }
+            storePassword "Cmrctd88"
+            keyAlias "guangzhou people create heaven and earth internet of things technology co., ltd."
+            keyPassword "Cmrctd88"
             v2SigningEnabled false
         }
     }
