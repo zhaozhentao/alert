@@ -21,4 +21,9 @@
             style="@style/action_bar_right"
             android:text="@string/tiaojian_query"/>
     </RelativeLayout>
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/map"
+        style="@style/match_width_match_height"
+        android:clickable="true"/>
 </LinearLayout>
