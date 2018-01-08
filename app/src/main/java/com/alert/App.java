@@ -5,8 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.alert.model.DaoMaster;
 import com.alert.model.DaoSession;
+import com.alert.service.PushService;
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
+import com.igexin.sdk.PushManager;
 
 /**
  * Created by zhaotao on 2018/1/1.
@@ -22,6 +24,11 @@ public class App extends Application {
 
         initDatabase();
         初始化百度地图();
+        初始化推送();
+    }
+
+    private void 初始化推送() {
+        PushManager.getInstance().initialize(this, PushService.class);
     }
 
     private void 初始化百度地图() {

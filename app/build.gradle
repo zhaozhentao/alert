@@ -4,7 +4,7 @@ apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 27
-    
+
     defaultConfig {
         applicationId "com.rctd.platfrom.rcpingan"
         minSdkVersion 17
@@ -12,6 +12,16 @@ android {
         versionCode 8
         versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "H26ke1xTQY7ZANkNLI64M2",
+                GETUI_APP_KEY   : "JKJIh1EFnL6pSq0fEGQId1",
+                GETUI_APP_SECRET: "BjXLXF3E0h8q1AiCCun75"
+        ]
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+        }
     }
 
     signingConfigs {
@@ -51,7 +61,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     compile 'org.greenrobot:greendao:3.2.2'
+    compile 'com.getui:sdk:2.11.1.0'
 }
+
 repositories {
     mavenCentral()
 }

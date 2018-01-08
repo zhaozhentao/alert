@@ -63,5 +63,12 @@
         </service>
         <!--百度 sdk end -->
 
+        <!--个推 start-->
+        <service
+            android:name="com.alert.service.PushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice"/>
+        <!--个推 end-->
     </application>
 </manifest>
