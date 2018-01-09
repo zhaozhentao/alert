@@ -9,6 +9,7 @@ import com.alert.service.PushService;
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.igexin.sdk.PushManager;
+import com.rctd.platfrom.rcpingan.BuildConfig;
 
 /**
  * Created by zhaotao on 2018/1/1.
@@ -40,7 +41,7 @@ public class App extends Application {
     }
 
     private void initDatabase() {
-        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "brain_wave");
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, BuildConfig.APPLICATION_ID);
         SQLiteDatabase db = helper.getWritableDatabase();
         DaoMaster daoMaster = new DaoMaster(db);
         mDaoSession = daoMaster.newSession();
