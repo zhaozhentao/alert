@@ -6,11 +6,21 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.alert.base.BaseRequestListener;
+import com.alert.entity.Ad;
+import com.alert.module.ApiModule;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.rctd.platfrom.rcpingan.R;
 
 import java.util.ArrayList;
+
+import base.core.http.response.HttpError;
+import base.core.image.GImageLoader;
 
 /**
  * Created by zhaotao on 2017/12/27.
@@ -27,17 +37,12 @@ public class ManagerFragment extends BaseFragment implements View.OnClickListene
     protected void onCreateView(LayoutInflater inflater) {
         setOnClickListeners(new int[]{R.id.car_query, R.id.driver_query, R.id.add_duka, R.id.duka_manager}, this);
 
-        显示广告内容();
+        ApiModule.获取广告信息("0794", new 获取广告回调(this));
     }
 
-    private void 显示广告内容() {
-        ArrayList<String> sd = new ArrayList<>();
-        sd.add("");
-        sd.add("");
-        sd.add("");
-
+    private void 显示广告内容(ArrayList<Ad> ads) {
         ViewPager pager = findViewById(R.id.pager);
-        Adapter adapter = new Adapter(sd);
+        Adapter adapter = new Adapter(ads);
         pager.setAdapter(adapter);
 
         LinearLayout dotsContainer = findViewById(R.id.dots);
@@ -85,13 +90,15 @@ public class ManagerFragment extends BaseFragment implements View.OnClickListene
 
         private View[] views;
 
-        private Adapter(ArrayList<String> ads) {
+        private Adapter(ArrayList<Ad> ads) {
             views = new View[ads.size()];
 
             for (int i = 0; i < views.length; i++) {
                 views[i] = getLayoutInflater().inflate(R.layout.pager_ad, null, false);
 
+                Ad ad = ads.get(i);
                 View root = views[i];
+                GImageLoader.getInstance().displayImage(ad.fullTitlePicPath, (ImageView) root.findViewById(R.id.cover));
             }
         }
 
@@ -114,6 +121,25 @@ public class ManagerFragment extends BaseFragment implements View.OnClickListene
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
+        }
+    }
+
+    private static class 获取广告回调 extends BaseRequestListener<ManagerFragment> {
+
+        private 获取广告回调(ManagerFragment activity) {
+            super(activity);
+        }
+
+        @Override
+        protected void onSuccess(ManagerFragment parent, String data) {
+            ArrayList<Ad> ads = new Gson().fromJson(data, new TypeToken<ArrayList<Ad>>() {
+            }.getType());
+            parent.显示广告内容(ads);
+        }
+
+        @Override
+        protected void onFailed(ManagerFragment parent, HttpError error) {
+            Toast.makeText(parent.getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 }

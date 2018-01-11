@@ -36,6 +36,7 @@ android {
 
     buildTypes {
         release {
+            buildConfigField 'String', 'BASE_URL', '"http://116.62.36.11:8082/rc-mp"'
             minifyEnabled false
             debuggable true
             signingConfig signingConfigs.release

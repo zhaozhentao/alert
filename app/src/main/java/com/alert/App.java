@@ -11,6 +11,8 @@ import com.baidu.mapapi.SDKInitializer;
 import com.igexin.sdk.PushManager;
 import com.rctd.platfrom.rcpingan.BuildConfig;
 
+import base.BaseContext;
+
 /**
  * Created by zhaotao on 2018/1/1.
  */
@@ -22,6 +24,8 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        BaseContext.InitLibrary(this);
 
         initDatabase();
         初始化百度地图();
