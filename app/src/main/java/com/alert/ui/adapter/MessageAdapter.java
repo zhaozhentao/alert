@@ -8,11 +8,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.rctd.platfrom.rcpingan.R;
 import com.alert.model.Notice;
 import com.alert.ui.fragment.BaseHolder;
+import com.rctd.platfrom.rcpingan.R;
 
 import java.util.List;
+
+import base.utils.StringUtils;
 
 /**
  * Created by zhaotao on 2017/12/31.
@@ -72,7 +74,7 @@ public class MessageAdapter extends BaseAdapter {
             Notice notice = data.get(i);
 
             content.setText(notice.content);
-            time.setText(notice.getCreated_at() + "");
+            time.setText(StringUtils.formatCn(notice.getCreated_at()));
         }
     }
 }

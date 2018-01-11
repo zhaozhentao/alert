@@ -64,7 +64,7 @@ public class StringUtils {
     public final static ThreadLocal<SimpleDateFormat> dateFormater_cn_date = new ThreadLocal<SimpleDateFormat>() {
         @Override
         protected SimpleDateFormat initialValue() {
-            return new SimpleDateFormat("yyyy年MM月dd日");
+            return new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
         }
     };
     private final static ThreadLocal<SimpleDateFormat> dateFormater_time = new ThreadLocal<SimpleDateFormat>() {
