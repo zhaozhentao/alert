@@ -24,4 +24,12 @@ public class ApiModule {
             .addParam("mobilePhone", mobilePhone)
             .send(listener);
     }
+
+    public static void 修改管理员密码(String mobilePhone, String passwdOld, String passwd, HttpListener listener) {
+        new BaseRequest(Urls.修改管理员密码, HttpMethod.POST)
+            .addParam("mobilePhone", mobilePhone)
+            .addParam("passwd", passwd)
+            .addParam("passwdOld", passwdOld)
+            .send(listener);
+    }
 }

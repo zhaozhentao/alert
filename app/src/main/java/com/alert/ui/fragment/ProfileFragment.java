@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alert.App;
 import com.rctd.platfrom.rcpingan.R;
@@ -64,6 +65,11 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
     }
 
     private void 修改密码() {
+        if (App().getUser() == null) {
+            Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         Intent intent = new Intent(getActivity(), ResetPasswordActivity.class);
         startActivity(intent);
     }

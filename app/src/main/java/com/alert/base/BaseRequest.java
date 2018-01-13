@@ -10,12 +10,15 @@ import base.core.http.HttpFactory;
 import base.core.http.api.HttpListener;
 import base.core.http.request.HttpMethod;
 import base.core.http.request.HttpRequest;
+import base.utils.StringUtils;
 
 /**
  * Created by zhaotao on 2018/1/11.
  */
 
 public class BaseRequest {
+
+    public static String token;
 
     private HashMap<String, String> map = new HashMap<>();
 
@@ -38,6 +41,15 @@ public class BaseRequest {
             e.printStackTrace();
         }
         request.addParam("jsondata", body);
+
+        if (StringUtils.isNotEmpty(token)) {
+            request.addHeader("appToken", token);
+        }
+
         HttpFactory.getHttpService().sendRequest(request, listener);
+    }
+
+    public static void setToken(String token) {
+        BaseRequest.token = token;
     }
 }

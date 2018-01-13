@@ -3,6 +3,7 @@ package com.alert;
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.alert.base.BaseRequest;
 import com.alert.consts.Consts;
 import com.alert.entity.Login;
 import com.alert.model.DaoMaster;
@@ -87,6 +88,12 @@ public class App extends Application {
 
     public void setUser(User user) {
         this.user = user;
+        if (user == null) {
+            BaseRequest.setToken(null);
+            return;
+        }
+
+        BaseRequest.setToken(user.login.appToken);
     }
 
     public User getUser() {
