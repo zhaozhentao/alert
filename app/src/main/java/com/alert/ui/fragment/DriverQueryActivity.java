@@ -4,7 +4,11 @@ import android.content.Context;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.alert.base.BaseRequestListener;
+import com.alert.module.ApiModule;
 import com.alert.ui.activity.BaseActivity;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -18,6 +22,8 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.rctd.platfrom.rcpingan.R;
+
+import base.core.http.response.HttpError;
 
 /**
  * Created by zhaotao on 2018/1/1.
@@ -143,7 +149,30 @@ public class DriverQueryActivity extends BaseActivity implements View.OnClickLis
                 .setView(view)
                 .show();
 
-            view.findViewById(R.id.query).setOnClickListener(v -> dialog.dismiss());
+            view.findViewById(R.id.query).setOnClickListener(v -> {
+                String vehsId = ((TextView) view.findViewById(R.id.vehsId)).getText().toString();
+                String beginTime = ((TextView) view.findViewById(R.id.beginTime)).getText().toString();
+                String endTime = ((TextView) view.findViewById(R.id.endTime)).getText().toString();
+                ApiModule.用户行车轨迹(vehsId, "keyword", beginTime, endTime, new 轨迹查询回调(DriverQueryActivity.this));
+                dialog.dismiss();
+            });
+        }
+    }
+
+    private static class 轨迹查询回调 extends BaseRequestListener<DriverQueryActivity> {
+
+        private 轨迹查询回调(DriverQueryActivity activity) {
+            super(activity);
+        }
+
+        @Override
+        protected void onSuccess(DriverQueryActivity parent, String data) {
+            Toast.makeText(parent, data, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onFailed(DriverQueryActivity parent, HttpError error) {
+            Toast.makeText(parent, error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 }

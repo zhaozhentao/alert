@@ -11,6 +11,7 @@
             android:text="@string/chepai_rfid"/>
 
         <EditText
+            android:id="@+id/vehsId"
             style="@style/match_width_wrap_height"/>
     </LinearLayout>
 
@@ -22,6 +23,7 @@
             android:text="@string/begin_date"/>
 
         <EditText
+            android:id="@+id/beginTime"
             style="@style/match_width_wrap_height"/>
     </LinearLayout>
 
@@ -33,17 +35,7 @@
             android:text="@string/end_date"/>
 
         <EditText
-            style="@style/match_width_wrap_height"/>
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/match_width_wrap_height"
-        android:orientation="horizontal">
-        <TextView
-            style="@style/wrap_width_wrap_height"
-            android:text="@string/end_time"/>
-
-        <EditText
+            android:id="@+id/endTime"
             style="@style/match_width_wrap_height"/>
     </LinearLayout>
 
