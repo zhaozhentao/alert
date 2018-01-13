@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/mobilePhone"
+        style="@style/match_width_wrap_height"
+        android:hint="请输入您的手机号码"/>
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/match_width_wrap_height"
+        android:hint="请输入您的手机密码"/>
+
+    <Button
+        android:id="@+id/login"
+        style="@style/wrap_width_wrap_height"
+        android:text="立即登录"/>
+</LinearLayout>

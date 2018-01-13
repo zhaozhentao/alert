@@ -77,4 +77,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     public DaoSession getDao() {
         return ((App) getApplication()).getDaoSession();
     }
+
+    public App App() {
+        return App.getInstance();
+    }
 }

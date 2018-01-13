@@ -59,7 +59,7 @@
                     tools:text="rfid区位码"/>
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/mobilePhone"
                     style="@style/wrap_width_wrap_height"
                     tools:text="车主姓名"/>
 

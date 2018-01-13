@@ -26,7 +26,7 @@ public class CarQueryActivity extends BaseActivity implements View.OnClickListen
 
     private void 填充页面信息() {
         ((TextView) findViewById(R.id.rfid)).setText("rfid区位码");
-        ((TextView) findViewById(R.id.name)).setText("车主姓名");
+        ((TextView) findViewById(R.id.mobilePhone)).setText("车主姓名");
         ((TextView) findViewById(R.id.phone)).setText("车主手机号");
         ((TextView) findViewById(R.id.home_phone)).setText("家庭电话:");
         ((TextView) findViewById(R.id.id_card)).setText("身份证:");

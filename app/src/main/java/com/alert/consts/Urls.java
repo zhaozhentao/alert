@@ -9,4 +9,6 @@ import com.rctd.platfrom.rcpingan.BuildConfig;
 public class Urls {
 
     public static final String 获取广告信息 = BuildConfig.BASE_URL + "/advs";
+
+    public static final String 登录 = BuildConfig.BASE_URL + "/mg-login";
 }

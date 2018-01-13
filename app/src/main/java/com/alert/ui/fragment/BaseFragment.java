@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alert.App;
 import com.alert.model.DaoSession;
 import com.alert.ui.activity.BaseActivity;
 
@@ -42,6 +43,10 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected DaoSession getDao() {
-        return ((BaseActivity)getActivity()).getDao();
+        return ((BaseActivity) getActivity()).getDao();
+    }
+
+    public App App() {
+        return ((BaseActivity) getActivity()).App();
     }
 }

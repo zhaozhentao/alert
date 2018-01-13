@@ -17,4 +17,11 @@ public class ApiModule {
             .addParam("areaCode", areaCode)
             .send(listener);
     }
+
+    public static void 登录(String mobilePhone, String passwd, HttpListener listener) {
+        new BaseRequest(Urls.登录, HttpMethod.POST)
+            .addParam("passwd", passwd)
+            .addParam("mobilePhone", mobilePhone)
+            .send(listener);
+    }
 }

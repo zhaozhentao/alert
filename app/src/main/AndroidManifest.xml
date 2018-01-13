@@ -51,6 +51,7 @@
         <activity android:name="com.alert.ui.fragment.DriverQueryActivity"/>
         <activity android:name="com.alert.ui.fragment.AddDukaActivity"/>
         <activity android:name="com.alert.ui.fragment.DukaManagerActivity"/>
+        <activity android:name="com.alert.ui.fragment.LoginActivity"/>
 
         <!--百度 sdk start -->
         <meta-data
