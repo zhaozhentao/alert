@@ -24,6 +24,8 @@ public class BaseRequest {
 
     private HttpRequest request;
 
+    private Object body;
+
     public BaseRequest(String url, HttpMethod method) {
         request = new HttpRequest(url, method);
     }
@@ -33,8 +35,20 @@ public class BaseRequest {
         return this;
     }
 
+    public BaseRequest setBody(Object body) {
+        this.body = body;
+        return this;
+    }
+
     public void send(HttpListener listener) {
-        String body = new Gson().toJson(map);
+        String body;
+
+        if (this.body != null) {
+            body = new Gson().toJson(this.body);
+        } else {
+            body = new Gson().toJson(map);
+        }
+
         try {
             body = URLEncoder.encode(body, "UTF-8");
         } catch (UnsupportedEncodingException e) {
