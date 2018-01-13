@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/match_width_match_height"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        style="@style/action_bar_container">
+        <TextView
+            android:id="@+id/back"
+            style="@style/action_back"
+            android:text="@string/back"/>
+
+        <TextView
+            style="@style/action_bar_title"
+            android:text="@string/un_bind_phone"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/phone"
+        style="@style/wrap_width_wrap_height"
+        tools:text="已绑定手机 134xxxxx"/>
+
+    <LinearLayout
+        style="@style/match_width_wrap_height"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/wrap_width_wrap_height"
+            android:text="短信码"/>
+
+        <EditText
+            android:id="@+id/msgCode"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/getMsgCode"
+            style="@style/wrap_width_wrap_height"
+            android:text="获取短信码"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/unBind"
+        style="@style/match_width_wrap_height"
+        android:text="解绑手机"/>
+</LinearLayout>

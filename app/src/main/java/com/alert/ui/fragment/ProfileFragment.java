@@ -18,6 +18,7 @@ import com.alert.ui.activity.SettingsActivity;
 import base.core.cache.Cache;
 import base.core.cache.CacheManager;
 import base.core.http.response.HttpError;
+import base.utils.StringUtils;
 
 /**
  * Created by zhaotao on 2017/12/27.
@@ -85,6 +86,20 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
         ApiModule.退出登录(new LogoutListener(this));
     }
 
+    private void 绑定解绑手机号() {
+        App.User user = App().getUser();
+        if (user == null) {
+            Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (StringUtils.isEmpty(user.getLogin().userMobile)) {
+            startActivity(new Intent(getActivity(), BindPhoneActivity.class));
+        } else {
+            startActivity(new Intent(getActivity(), UnBindPhoneActivity.class));
+        }
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -95,6 +110,7 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
                 修改密码();
                 break;
             case R.id.bind:
+                绑定解绑手机号();
                 break;
             case R.id.clear:
                 break;

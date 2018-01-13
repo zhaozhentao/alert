@@ -22,10 +22,11 @@ public class ApiModule {
     }
 
     //2
-    public static void 登录(String mobilePhone, String passwd, HttpListener listener) {
+    public static void 登录(String mobilePhone, String passwd, String pushId, HttpListener listener) {
         new BaseRequest(Urls.登录, HttpMethod.POST)
             .addParam("passwd", passwd)
             .addParam("mobilePhone", mobilePhone)
+            .addParam("pushId", pushId)
             .send(listener);
     }
 

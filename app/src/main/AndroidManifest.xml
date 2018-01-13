@@ -52,6 +52,8 @@
         <activity android:name="com.alert.ui.fragment.AddDukaActivity"/>
         <activity android:name="com.alert.ui.fragment.DukaManagerActivity"/>
         <activity android:name="com.alert.ui.fragment.LoginActivity"/>
+        <activity android:name="com.alert.ui.fragment.BindPhoneActivity"/>
+        <activity android:name="com.alert.ui.fragment.UnBindPhoneActivity"/>
 
         <!--百度 sdk start -->
         <meta-data

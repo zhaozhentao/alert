@@ -113,5 +113,9 @@ public class App extends Application {
         public String getMobilePhone() {
             return mobilePhone;
         }
+
+        public Login getLogin() {
+            return login;
+        }
     }
 }

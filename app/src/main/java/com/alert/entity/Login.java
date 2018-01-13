@@ -19,6 +19,7 @@ public class Login {
     public AuthsBean auths;
     public String memberId;
     public List<String> rfidAreaCode;
+    public String userMobile;
 
     public static class AuthsBean {
         /**
@@ -237,6 +238,7 @@ public class Login {
             ", auths=" + auths +
             ", memberId='" + memberId + '\'' +
             ", rfidAreaCode=" + rfidAreaCode +
+            ", userMobile='" + userMobile + '\'' +
             '}';
     }
 }

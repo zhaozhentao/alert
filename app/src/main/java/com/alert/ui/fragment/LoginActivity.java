@@ -34,10 +34,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         setOnClickListeners(new int[]{R.id.login}, this);
     }
 
+    // TODO: 2018/1/13 pushid
     private void 登录() {
         String mobilePhone = ((EditText) findViewById(R.id.mobilePhone)).getText().toString();
         String password = ((EditText) findViewById(R.id.password)).getText().toString();
-        ApiModule.登录(mobilePhone, password, new 登录回调(mobilePhone, this));
+        ApiModule.登录(mobilePhone, password, "pushid", new 登录回调(mobilePhone, this));
     }
 
     @Override
