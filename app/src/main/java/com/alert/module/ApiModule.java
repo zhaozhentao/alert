@@ -56,7 +56,7 @@ public class ApiModule {
     }
 
     //6
-    public static void 检查是否升级(String mobilePhone, String passwdOld, String passwd, HttpListener listener) {
+    public static void 检查是否升级(HttpListener listener) {
         new BaseRequest(Urls.检查是否升级, HttpMethod.POST)
             .send(listener);
     }
