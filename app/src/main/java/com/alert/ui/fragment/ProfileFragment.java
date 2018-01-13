@@ -7,10 +7,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alert.App;
+import com.alert.base.BaseRequestListener;
+import com.alert.consts.Consts;
+import com.alert.module.ApiModule;
 import com.rctd.platfrom.rcpingan.R;
 import com.alert.ui.activity.AboutActivity;
 import com.alert.ui.activity.ResetPasswordActivity;
 import com.alert.ui.activity.SettingsActivity;
+
+import base.core.cache.Cache;
+import base.core.cache.CacheManager;
+import base.core.http.response.HttpError;
 
 /**
  * Created by zhaotao on 2017/12/27.
@@ -74,6 +81,10 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
         startActivity(intent);
     }
 
+    private void 退出登录() {
+        ApiModule.退出登录(new LogoutListener(this));
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -94,7 +105,28 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
                 关于我们();
                 break;
             case R.id.logout:
+                退出登录();
                 break;
+        }
+    }
+
+    private static class LogoutListener extends BaseRequestListener<ProfileFragment> {
+
+        private LogoutListener(ProfileFragment activity) {
+            super(activity);
+        }
+
+        @Override
+        protected void onSuccess(ProfileFragment parent, String data) {
+            Cache cache = CacheManager.getInstance();
+            cache.remove(Consts.MobilePhone);
+            parent.App().setUser(null);
+            parent.显示登录状态();
+        }
+
+        @Override
+        protected void onFailed(ProfileFragment parent, HttpError error) {
+            Toast.makeText(parent.getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 }

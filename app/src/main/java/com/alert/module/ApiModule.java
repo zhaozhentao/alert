@@ -32,4 +32,9 @@ public class ApiModule {
             .addParam("passwdOld", passwdOld)
             .send(listener);
     }
+
+    public static void 退出登录(HttpListener listener) {
+        new BaseRequest(Urls.退出登录, HttpMethod.POST)
+            .send(listener);
+    }
 }
