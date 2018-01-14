@@ -178,15 +178,19 @@ public class ApiModule {
     }
 
     //21
-    public static void 绑定用户手机号(String userMobile, HttpListener listener) {
+    public static void 绑定用户手机号(String userMobile, String tempKey, String vCode, HttpListener listener) {
         new BaseRequest(Urls.绑定用户手机号, HttpMethod.POST)
             .addParam("userMobile", userMobile)
+            .addParam("tempKey", tempKey)
+            .addParam("vCode", vCode)
             .send(listener);
     }
 
     //22
-    public static void 解绑用户手机号(HttpListener listener) {
+    public static void 解绑用户手机号(String tempKey, String vCode, HttpListener listener) {
         new BaseRequest(Urls.解绑用户手机号, HttpMethod.POST)
+            .addParam("tempKey", tempKey)
+            .addParam("vCode", vCode)
             .send(listener);
     }
 }
