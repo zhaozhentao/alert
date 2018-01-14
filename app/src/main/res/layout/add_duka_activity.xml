@@ -36,6 +36,7 @@
                     android:text="@string/province"/>
 
                 <EditText
+                    android:id="@+id/province"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -46,16 +47,7 @@
                     android:text="@string/city"/>
 
                 <EditText
-                    style="@style/add_duka_content"/>
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/add_duka_item">
-                <TextView
-                    style="@style/add_duka_title"
-                    android:text="@string/city"/>
-
-                <EditText
+                    android:id="@+id/city"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -66,6 +58,7 @@
                     android:text="@string/qu"/>
 
                 <EditText
+                    android:id="@+id/area"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -76,6 +69,7 @@
                     android:text="@string/zhen"/>
 
                 <EditText
+                    android:id="@+id/town"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -86,6 +80,7 @@
                     android:text="@string/address"/>
 
                 <EditText
+                    android:id="@+id/address"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -96,6 +91,7 @@
                     android:text="@string/jingdu"/>
 
                 <EditText
+                    android:id="@+id/longitude"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -106,6 +102,7 @@
                     android:text="@string/weidu"/>
 
                 <EditText
+                    android:id="@+id/latitude"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -116,6 +113,7 @@
                     android:text="@string/bianhao"/>
 
                 <EditText
+                    android:id="@+id/cardReaderNumber"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -126,6 +124,7 @@
                     android:text="@string/quyuma"/>
 
                 <EditText
+                    android:id="@+id/cardReaderAreaCode"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -136,6 +135,7 @@
                     android:text="@string/yingjianid"/>
 
                 <EditText
+                    android:id="@+id/cardReaderId"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -146,6 +146,7 @@
                     android:text="@string/suoshubumen"/>
 
                 <EditText
+                    android:id="@+id/managerUserId"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -156,6 +157,7 @@
                     android:text="@string/guanlirenyuan"/>
 
                 <EditText
+                    android:id="@+id/department"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -166,8 +168,14 @@
                     android:text="@string/remark"/>
 
                 <EditText
+                    android:id="@+id/remark"
                     style="@style/add_duka_content"/>
             </LinearLayout>
+
+            <Button
+                android:id="@+id/save"
+                style="@style/match_width_wrap_height"
+                android:text="保存"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
