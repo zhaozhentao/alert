@@ -18,4 +18,9 @@
         android:id="@+id/login"
         style="@style/wrap_width_wrap_height"
         android:text="立即登录"/>
+
+    <TextView
+        android:id="@+id/forget"
+        style="@style/wrap_width_wrap_height"
+        android:text="忘记密码"/>
 </LinearLayout>

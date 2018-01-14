@@ -47,13 +47,15 @@
         <activity android:name="com.alert.ui.activity.AboutActivity"/>
         <activity android:name="com.alert.ui.activity.SettingsActivity"/>
         <activity android:name="com.alert.ui.activity.ResetPasswordActivity"/>
-        <activity android:name="com.alert.ui.fragment.CarQueryActivity"/>
-        <activity android:name="com.alert.ui.fragment.DriverQueryActivity"/>
-        <activity android:name="com.alert.ui.fragment.AddDukaActivity"/>
-        <activity android:name="com.alert.ui.fragment.DukaManagerActivity"/>
-        <activity android:name="com.alert.ui.fragment.LoginActivity"/>
-        <activity android:name="com.alert.ui.fragment.BindPhoneActivity"/>
-        <activity android:name="com.alert.ui.fragment.UnBindPhoneActivity"/>
+        <activity android:name="com.alert.ui.activity.CarQueryActivity"/>
+        <activity android:name="com.alert.ui.activity.DriverQueryActivity"/>
+        <activity android:name="com.alert.ui.activity.AddDukaActivity"/>
+        <activity android:name="com.alert.ui.activity.DukaManagerActivity"/>
+        <activity android:name="com.alert.ui.activity.LoginActivity"/>
+        <activity android:name="com.alert.ui.activity.BindPhoneActivity"/>
+        <activity android:name="com.alert.ui.activity.UnBindPhoneActivity"/>
+        <activity android:name="com.alert.ui.activity.ForgotPasswordActivity"/>
+        <activity android:name="com.alert.ui.activity.ResetPasswordFromVCodeActivity"/>
 
         <!--百度 sdk start -->
         <meta-data

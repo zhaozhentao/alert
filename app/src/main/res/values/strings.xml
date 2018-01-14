@@ -55,4 +55,5 @@
     <string name="full_info">获取路径信息</string>
     <string name="un_bind_phone">解绑手机</string>
     <string name="bind_phone">绑定手机</string>
+    <string name="forgot">忘记密码</string>
 </resources>

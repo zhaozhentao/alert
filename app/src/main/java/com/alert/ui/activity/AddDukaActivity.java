@@ -1,4 +1,4 @@
-package com.alert.ui.fragment;
+package com.alert.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +9,6 @@ import com.alert.base.BaseRequestListener;
 import com.alert.entity.CardReader;
 import com.alert.entity.CardReaderEntity;
 import com.alert.module.ApiModule;
-import com.alert.ui.activity.BaseActivity;
 import com.alert.utils.LocationUtils;
 import com.rctd.platfrom.rcpingan.R;
 

@@ -1,4 +1,4 @@
-package com.alert.ui.fragment;
+package com.alert.ui.activity;
 
 import android.view.View;
 import android.widget.EditText;
@@ -11,7 +11,6 @@ import com.alert.module.ApiModule;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.rctd.platfrom.rcpingan.R;
-import com.alert.ui.activity.BaseActivity;
 
 import base.core.http.response.HttpError;
 

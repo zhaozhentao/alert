@@ -1,7 +1,6 @@
-package com.alert.ui.fragment;
+package com.alert.ui.activity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -11,14 +10,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.alert.App;
 import com.alert.base.BaseRequestListener;
 import com.alert.entity.CardReaderEntity;
 import com.alert.module.ApiModule;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.rctd.platfrom.rcpingan.R;
-import com.alert.ui.activity.BaseActivity;
 import com.alert.ui.adapter.DukaInfoAdapter;
 import com.alert.utils.ViewHelper;
 

@@ -1,15 +1,14 @@
-package com.alert.ui.fragment;
+package com.alert.ui.activity;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alert.base.BaseRequest;
 import com.alert.base.BaseRequestListener;
 import com.alert.base.Counter;
 import com.alert.module.ApiModule;
-import com.alert.ui.activity.BaseActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.rctd.platfrom.rcpingan.R;
@@ -25,30 +24,32 @@ import static com.alert.base.Counter.Second;
  * Created by zhaotao on 2018/1/13.
  */
 
-public class BindPhoneActivity extends BaseActivity implements View.OnClickListener {
+public class UnBindPhoneActivity extends BaseActivity implements View.OnClickListener {
 
     private Counter counter;
+
     private String tempKey;
 
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.activity_bind_phone;
+        return R.layout.activity_un_bind;
     }
 
     @Override
     protected void onActivityCreate() {
-        setOnClickListeners(new int[]{R.id.bind, R.id.getMsgCode}, this);
-    }
+        setOnClickListeners(new int[]{R.id.unBind, R.id.getMsgCode}, this);
 
-    private void 绑定手机() {
-        String phone = ((EditText) findViewById(R.id.phone)).getText().toString();
-        String vCode = ((EditText) findViewById(R.id.vCode)).getText().toString();
-        ApiModule.绑定用户手机号(phone, tempKey, vCode, new 绑定手机回调(this));
+        ((TextView) findViewById(R.id.phone)).setText("已绑定手机:" + App().getUser().getLogin().userMobile);
     }
 
     private void 获取短信码() {
-        String phone = ((EditText) findViewById(R.id.phone)).getText().toString();
-        ApiModule.获取短信验证码(phone, new 获取短信码回调(this));
+        String phone = App().getUser().getLogin().userMobile;
+        ApiModule.获取短信验证码(phone, new 获取验证码回调(this));
+    }
+
+    private void 解绑手机() {
+        String vCode = ((EditText) findViewById(R.id.vCode)).getText().toString();
+        ApiModule.解绑用户手机号(tempKey, vCode, new 解绑手机回调(this));
     }
 
     @Override
@@ -62,40 +63,40 @@ public class BindPhoneActivity extends BaseActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.unBind:
+                解绑手机();
+                break;
             case R.id.getMsgCode:
                 获取短信码();
-                break;
-            case R.id.bind:
-                绑定手机();
                 break;
         }
     }
 
-    private static class 绑定手机回调 extends BaseRequestListener<BindPhoneActivity> {
+    private static class 解绑手机回调 extends BaseRequestListener<UnBindPhoneActivity> {
 
-        private 绑定手机回调(BindPhoneActivity activity) {
+        private 解绑手机回调(UnBindPhoneActivity activity) {
             super(activity);
         }
 
         @Override
-        protected void onSuccess(BindPhoneActivity parent, String data) {
-            Toast.makeText(parent, "绑定成功", Toast.LENGTH_SHORT).show();
+        protected void onSuccess(UnBindPhoneActivity parent, String data) {
+            Toast.makeText(parent, "解绑成功", Toast.LENGTH_SHORT).show();
         }
 
         @Override
-        protected void onFailed(BindPhoneActivity parent, HttpError error) {
+        protected void onFailed(UnBindPhoneActivity parent, HttpError error) {
             Toast.makeText(parent, error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
-    private static class 获取短信码回调 extends BaseRequestListener<BindPhoneActivity> {
+    private static class 获取验证码回调 extends BaseRequestListener<UnBindPhoneActivity> {
 
-        private 获取短信码回调(BindPhoneActivity activity) {
+        private 获取验证码回调(UnBindPhoneActivity activity) {
             super(activity);
         }
 
         @Override
-        protected void onSuccess(BindPhoneActivity parent, String data) {
+        protected void onSuccess(UnBindPhoneActivity parent, String data) {
             Button button = parent.findViewById(R.id.getMsgCode);
             parent.counter = new Counter(Minute, Second,
                 (left) -> button.setText("重新获取(" + left + ")"),
@@ -112,7 +113,7 @@ public class BindPhoneActivity extends BaseActivity implements View.OnClickListe
         }
 
         @Override
-        protected void onFailed(BindPhoneActivity parent, HttpError error) {
+        protected void onFailed(UnBindPhoneActivity parent, HttpError error) {
             Toast.makeText(parent, error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }

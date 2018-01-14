@@ -1,4 +1,4 @@
-package com.alert.ui.fragment;
+package com.alert.ui.activity;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.alert.base.BaseRequestListener;
 import com.alert.module.ApiModule;
-import com.alert.ui.activity.BaseActivity;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;

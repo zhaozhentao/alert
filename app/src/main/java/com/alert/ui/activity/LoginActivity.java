@@ -1,5 +1,6 @@
-package com.alert.ui.fragment;
+package com.alert.ui.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -9,7 +10,6 @@ import com.alert.base.BaseRequestListener;
 import com.alert.consts.Consts;
 import com.alert.entity.Login;
 import com.alert.module.ApiModule;
-import com.alert.ui.activity.BaseActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.rctd.platfrom.rcpingan.R;
@@ -31,7 +31,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     protected void onActivityCreate() {
-        setOnClickListeners(new int[]{R.id.login}, this);
+        setOnClickListeners(new int[]{R.id.login, R.id.forget}, this);
     }
 
     // TODO: 2018/1/13 pushid
@@ -46,6 +46,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.login:
                 登录();
+                break;
+            case R.id.forget:
+                startActivity(new Intent(this, ForgotPasswordActivity.class));
                 break;
         }
     }
