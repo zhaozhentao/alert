@@ -4,7 +4,6 @@ import com.alert.base.BaseRequest;
 import com.alert.consts.Urls;
 import com.alert.entity.CarInfo;
 import com.alert.entity.CardReader;
-import com.alert.entity.ModifyCardReader;
 
 import base.core.http.api.HttpListener;
 import base.core.http.request.HttpMethod;
@@ -14,6 +13,9 @@ import base.core.http.request.HttpMethod;
  */
 
 public class ApiModule {
+
+    private static final String PAGE_SIZE = "10";
+
     //1
     public static void 获取短信验证码(String mobilePhone, HttpListener listener) {
         new BaseRequest(Urls.获取短信验证码, HttpMethod.POST)
@@ -137,7 +139,7 @@ public class ApiModule {
     }
 
     //17
-    public static void 修改读卡器(ModifyCardReader reader, HttpListener listener) {
+    public static void 修改读卡器(CardReader reader, HttpListener listener) {
         new BaseRequest(Urls.修改读卡器, HttpMethod.POST)
             .setBody(reader)
             .send(listener);
@@ -161,8 +163,7 @@ public class ApiModule {
     //20
     public static void 读卡器信息查询(
         String cardReaderNumber, String cardReaderAreaCode, String cardReaderStatus, String installStatus,
-        String beginTime, String endTime, int pageSize, int pageIndex,
-        HttpListener listener
+        String beginTime, String endTime, int pageIndex, HttpListener listener
     ) {
         new BaseRequest(Urls.读卡器信息查询, HttpMethod.POST)
             .addParam("cardReaderNumber", cardReaderNumber)
@@ -171,7 +172,7 @@ public class ApiModule {
             .addParam("installStatus", installStatus)
             .addParam("beginTime", beginTime)
             .addParam("endTime", endTime)
-            .addParam("pageSize", pageSize + "")
+            .addParam("pageSize", PAGE_SIZE)
             .addParam("pageIndex", pageIndex + "")
             .send(listener);
     }

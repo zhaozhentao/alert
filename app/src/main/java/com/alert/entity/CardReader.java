@@ -22,6 +22,7 @@ public class CardReader {
      * remark :
      */
 
+    public String cardId;
     public String privince;
     public String city;
     public String area;

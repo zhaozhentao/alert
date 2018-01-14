@@ -1,11 +1,13 @@
 package com.alert.ui.fragment;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.alert.base.BaseRequestListener;
 import com.alert.entity.CardReader;
+import com.alert.entity.CardReaderEntity;
 import com.alert.module.ApiModule;
 import com.alert.ui.activity.BaseActivity;
 import com.alert.utils.LocationUtils;
@@ -29,9 +31,29 @@ public class AddDukaActivity extends BaseActivity implements View.OnClickListene
     @Override
     protected void onActivityCreate() {
         setOnClickListeners(new int[]{R.id.get_location, R.id.save}, this);
+
+        修改安装点();
+    }
+
+    private void 修改安装点() {
+        Bundle bundle = getIntent().getBundleExtra("bundle");
+        if (bundle == null) {
+            return;
+        }
+
+        CardReaderEntity entity = (CardReaderEntity) bundle.get("reader");
+
+        ((EditText) findViewById(R.id.province)).setText(entity.privince);
+        ((EditText) findViewById(R.id.city)).setText(entity.city);
+        ((EditText) findViewById(R.id.address)).setText(entity.address);
+        ((EditText) findViewById(R.id.cardReaderNumber)).setText(entity.cardReaderNumber);
+        ((EditText) findViewById(R.id.cardReaderAreaCode)).setText(entity.cardReaderAreaCode);
+        ((EditText) findViewById(R.id.managerUserId)).setText(entity.managerUserId);
     }
 
     private void 保存() {
+        Bundle bundle = getIntent().getBundleExtra("bundle");
+
         CardReader reader = new CardReader();
         reader.privince = ((EditText) findViewById(R.id.province)).getText().toString();
         reader.city = ((EditText) findViewById(R.id.city)).getText().toString();
@@ -46,7 +68,13 @@ public class AddDukaActivity extends BaseActivity implements View.OnClickListene
         reader.managerUserId = ((EditText) findViewById(R.id.managerUserId)).getText().toString();
         reader.department = ((EditText) findViewById(R.id.department)).getText().toString();
         reader.remark = ((EditText) findViewById(R.id.remark)).getText().toString();
-        ApiModule.新增读卡器(reader, new 新增读卡器回调(this));
+        if (null == bundle) {
+            ApiModule.新增读卡器(reader, new 新增读卡器回调(this));
+        } else {
+            reader.cardId = ((CardReaderEntity) bundle.get("reader")).cardId;
+            ApiModule.修改读卡器(reader, new 新增读卡器回调(this));
+        }
+
     }
 
     private void 获取位置() {
@@ -93,7 +121,7 @@ public class AddDukaActivity extends BaseActivity implements View.OnClickListene
 
         @Override
         protected void onSuccess(AddDukaActivity parent, String data) {
-            Toast.makeText(parent, "新增成功", Toast.LENGTH_SHORT).show();
+            Toast.makeText(parent, "成功", Toast.LENGTH_SHORT).show();
         }
 
         @Override

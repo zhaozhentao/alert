@@ -12,6 +12,7 @@
             android:text="@string/bianhao"/>
 
         <EditText
+            android:id="@+id/cardReaderNumber"
             style="@style/query_dialog_edit"/>
     </LinearLayout>
 
@@ -23,6 +24,7 @@
             android:text="@string/quyuma"/>
 
         <EditText
+            android:id="@+id/cardReaderAreaCode"
             style="@style/query_dialog_edit"/>
     </LinearLayout>
 
@@ -34,6 +36,7 @@
             android:text="@string/status"/>
 
         <EditText
+            android:id="@+id/cardReaderStatus"
             style="@style/query_dialog_edit"/>
     </LinearLayout>
 
@@ -45,6 +48,7 @@
             android:text="@string/anzhuang_status"/>
 
         <EditText
+            android:id="@+id/installStatus"
             style="@style/query_dialog_edit"/>
     </LinearLayout>
 
@@ -56,6 +60,7 @@
             android:text="@string/anzhuang_start_time"/>
 
         <EditText
+            android:id="@+id/beginTime"
             style="@style/query_dialog_edit"/>
     </LinearLayout>
 
@@ -67,6 +72,7 @@
             android:text="@string/anzhuang_start_end"/>
 
         <EditText
+            android:id="@+id/endTime"
             style="@style/query_dialog_edit"/>
     </LinearLayout>
 

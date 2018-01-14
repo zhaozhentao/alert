@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.alert.entity.CardReaderEntity;
 import com.rctd.platfrom.rcpingan.R;
 import com.alert.ui.fragment.BaseHolder;
 
@@ -17,10 +18,10 @@ import java.util.ArrayList;
 
 public class DukaInfoAdapter extends BaseAdapter {
 
-    private ArrayList<String> data;
+    private ArrayList<CardReaderEntity> data;
     private LayoutInflater inflater;
 
-    public DukaInfoAdapter(LayoutInflater inflater, ArrayList<String> data) {
+    public DukaInfoAdapter(LayoutInflater inflater, ArrayList<CardReaderEntity> data) {
         this.inflater = inflater;
         this.data = data;
     }
@@ -71,13 +72,14 @@ public class DukaInfoAdapter extends BaseAdapter {
 
         @Override
         public void refresh(int i) {
-            编号.setText("编号");
+            CardReaderEntity cardReader = data.get(i);
+            编号.setText("编号:" + cardReader.cardReaderNumber);
             安装时间.setText("安装时间");
-            状态.setText("状态");
-            管理人.setText("管理人");
-            手机号.setText("手机号");
-            区域码.setText("区域码");
-            地址.setText("地址");
+            状态.setText("状态" + cardReader.cardReaderStatus);
+            管理人.setText("管理人:" + cardReader.managerUserName);
+            手机号.setText("手机号:" + cardReader.managerUserMobile);
+            区域码.setText("区域码:" + cardReader.cardReaderAreaCode);
+            地址.setText("地址:" + cardReader.address);
         }
     }
 }
