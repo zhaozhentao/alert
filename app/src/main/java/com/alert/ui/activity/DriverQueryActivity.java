@@ -12,6 +12,7 @@ import com.alert.entity.Tracks;
 import com.alert.module.ApiModule;
 import com.alert.utils.LocationUtils;
 import com.alert.utils.MarkerManager;
+import com.alert.utils.TrackLineManager;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapPoi;
 import com.baidu.mapapi.map.MapStatus;
@@ -156,7 +157,9 @@ public class DriverQueryActivity extends BaseActivity implements View.OnClickLis
             if (parent.markerManager != null) {
                 parent.markerManager.recycle();
             }
+            parent.baiduMap.clear();
             parent.markerManager = new MarkerManager(tracks.vehsTracks, parent.baiduMap, parent);
+            new TrackLineManager(tracks.vehsTracks, parent.baiduMap);
         }
 
         @Override
