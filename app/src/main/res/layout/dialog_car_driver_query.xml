@@ -20,11 +20,25 @@
         android:orientation="horizontal">
         <TextView
             style="@style/wrap_width_wrap_height"
+            android:text="@string/keyword"/>
+
+        <EditText
+            android:id="@+id/keyword"
+            style="@style/match_width_wrap_height"
+            android:text="100714"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/match_width_wrap_height"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/wrap_width_wrap_height"
             android:text="@string/begin_date"/>
 
         <EditText
             android:id="@+id/beginTime"
-            style="@style/match_width_wrap_height"/>
+            style="@style/match_width_wrap_height"
+            android:text="2017-07-22 00:00:00"/>
     </LinearLayout>
 
     <LinearLayout
@@ -36,7 +50,8 @@
 
         <EditText
             android:id="@+id/endTime"
-            style="@style/match_width_wrap_height"/>
+            style="@style/match_width_wrap_height"
+            android:text="2017-07-22 23:59:59"/>
     </LinearLayout>
 
     <Button
