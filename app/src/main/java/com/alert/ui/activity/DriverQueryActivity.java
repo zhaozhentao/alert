@@ -14,7 +14,6 @@ import com.alert.utils.LocationUtils;
 import com.alert.utils.MarkerManager;
 import com.alert.utils.TrackLineManager;
 import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.MapPoi;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
@@ -30,12 +29,13 @@ import base.core.http.response.HttpError;
  * Created by zhaotao on 2018/1/1.
  */
 
-public class DriverQueryActivity extends BaseActivity implements View.OnClickListener, BaiduMap.OnMapClickListener {
+public class DriverQueryActivity extends BaseActivity implements View.OnClickListener {
 
     private MapView mapView;
     private BaiduMap baiduMap;
     private LocationUtils utils;
     private MarkerManager markerManager;
+    private boolean isFirstLoc = true; // 是否首次定位
 
     @Override
     protected int getLayoutResourceId() {
@@ -53,7 +53,6 @@ public class DriverQueryActivity extends BaseActivity implements View.OnClickLis
         mapView = findViewById(R.id.map);
         baiduMap = mapView.getMap();
         baiduMap.setMyLocationEnabled(true);
-        baiduMap.setOnMapClickListener(this);
 
         utils = new LocationUtils(this, location -> {
             if (location == null || baiduMap == null) {
@@ -83,20 +82,6 @@ public class DriverQueryActivity extends BaseActivity implements View.OnClickLis
                 break;
         }
     }
-
-    //    百度地图
-    private boolean isFirstLoc = true; // 是否首次定位
-
-    @Override
-    public void onMapClick(LatLng latLng) {
-
-    }
-
-    @Override
-    public boolean onMapPoiClick(MapPoi mapPoi) {
-        return false;
-    }
-    //    百度地图
 
     @Override
     protected void onResume() {
