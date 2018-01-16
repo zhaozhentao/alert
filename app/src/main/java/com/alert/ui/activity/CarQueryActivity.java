@@ -58,7 +58,7 @@ public class CarQueryActivity extends BaseActivity implements View.OnClickListen
 
     private void 查询() {
         String id = ((EditText) findViewById(R.id.id)).getText().toString();
-        ApiModule.通过车牌号或RFID号获取车辆信息("abc8989898xxdfe", new 查询回调(this));
+        ApiModule.通过车牌号或RFID号获取车辆信息(id, new 查询回调(this));
     }
 
     @Override

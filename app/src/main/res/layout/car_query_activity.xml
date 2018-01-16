@@ -38,7 +38,8 @@
                     android:id="@+id/id"
                     android:layout_width="0px"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:text="abc8989898xxdfe"/>
 
                 <Button
                     android:id="@+id/query"
