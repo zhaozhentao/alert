@@ -1,6 +1,8 @@
 package com.alert.base;
 
+import com.alert.App;
 import com.google.gson.Gson;
+import com.igexin.sdk.PushManager;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -37,6 +39,11 @@ public class BaseRequest {
 
     public BaseRequest setBody(Object body) {
         this.body = body;
+        return this;
+    }
+
+    public BaseRequest addHeader(String key, String value) {
+        request.addHeader(key, value);
         return this;
     }
 

@@ -1,9 +1,11 @@
 package com.alert.module;
 
+import com.alert.App;
 import com.alert.base.BaseRequest;
 import com.alert.consts.Urls;
 import com.alert.entity.CarInfo;
 import com.alert.entity.CardReader;
+import com.igexin.sdk.PushManager;
 
 import base.core.http.api.HttpListener;
 import base.core.http.request.HttpMethod;
@@ -191,6 +193,13 @@ public class ApiModule {
         new BaseRequest(Urls.解绑用户手机号, HttpMethod.POST)
             .addParam("tempKey", tempKey)
             .addParam("vCode", vCode)
+            .send(listener);
+    }
+
+    public static void 推送(String pushId, HttpListener listener) {
+        new BaseRequest(Urls.推送, HttpMethod.POST)
+            .addHeader("clientId", PushManager.getInstance().getClientid(App.getInstance()))
+            .addParam("pushId", pushId)
             .send(listener);
     }
 }

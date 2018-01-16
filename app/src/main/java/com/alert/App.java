@@ -8,6 +8,7 @@ import com.alert.consts.Consts;
 import com.alert.entity.Login;
 import com.alert.model.DaoMaster;
 import com.alert.model.DaoSession;
+import com.alert.service.DemoIntentService;
 import com.alert.service.PushService;
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
@@ -60,7 +61,8 @@ public class App extends Application {
     }
 
     private void 初始化推送() {
-        PushManager.getInstance().initialize(this, PushService.class);
+        PushManager.getInstance().initialize(getApplicationContext(), PushService.class);
+        PushManager.getInstance().registerPushIntentService(getApplicationContext(), DemoIntentService.class);
     }
 
     private void 初始化百度地图() {

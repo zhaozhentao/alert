@@ -51,4 +51,6 @@ public class Urls {
     public static final String 绑定用户手机号 = BuildConfig.BASE_URL + "/user_bind_mobile";
 
     public static final String 解绑用户手机号 = BuildConfig.BASE_URL + "/cancel_bind_mobile";
+
+    public static final String 推送 = BuildConfig.BASE_URL + "/push";
 }

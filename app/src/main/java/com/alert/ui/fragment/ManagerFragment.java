@@ -3,6 +3,7 @@ package com.alert.ui.fragment;
 import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import com.alert.ui.activity.DriverQueryActivity;
 import com.alert.ui.activity.DukaManagerActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.igexin.sdk.PushManager;
 import com.rctd.platfrom.rcpingan.R;
 
 import java.util.ArrayList;
@@ -39,7 +41,7 @@ public class ManagerFragment extends BaseFragment implements View.OnClickListene
 
     @Override
     protected void onCreateView(LayoutInflater inflater) {
-        setOnClickListeners(new int[]{R.id.car_query, R.id.driver_query, R.id.add_duka, R.id.duka_manager}, this);
+        setOnClickListeners(new int[]{R.id.car_query, R.id.driver_query, R.id.add_duka, R.id.duka_manager, R.id.push}, this);
 
         ApiModule.获取广告信息("0794", new 获取广告回调(this));
     }
@@ -87,6 +89,19 @@ public class ManagerFragment extends BaseFragment implements View.OnClickListene
                 startActivity(new Intent(getActivity(), DukaManagerActivity.class));
                 break;
             }
+            case R.id.push:
+                ApiModule.推送(PushManager.getInstance().getClientid(getActivity()), new BaseRequestListener(this) {
+                    @Override
+                    protected void onSuccess(Object parent, String data) {
+                        Log.e("push", data + "");
+                    }
+
+                    @Override
+                    protected void onFailed(Object parent, HttpError error) {
+
+                    }
+                });
+                break;
         }
     }
 

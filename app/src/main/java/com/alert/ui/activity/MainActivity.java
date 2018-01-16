@@ -2,7 +2,6 @@ package com.alert.ui.activity;
 
 import android.support.v4.app.Fragment;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.alert.base.BaseRequestListener;
 import com.alert.module.ApiModule;
