@@ -3,13 +3,14 @@ package com.alert.ui.fragment;
 import android.view.LayoutInflater;
 import android.widget.ListView;
 
-import com.rctd.platfrom.rcpingan.R;
 import com.alert.model.Notice;
 import com.alert.ui.adapter.MessageAdapter;
+import com.rctd.platfrom.rcpingan.R;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by zhaotao on 2017/12/27.
@@ -27,16 +28,34 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     protected void onCreateView(LayoutInflater inflater) {
-        加载历史消息();
-        adapter = new MessageAdapter(getActivity(), data);
+        EventBus.getDefault().register(this);
 
         ListView listView = findViewById(R.id.list);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter = new MessageAdapter(getActivity(), data));
+        加载历史消息();
+    }
+
+    @Override
+    public void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 
     private void 加载历史消息() {
-        getDao().getNoticeDao().insert(new Notice(null, "content", new Date()));
+        data.clear();
         List<Notice> list = getDao().getNoticeDao().queryBuilder().list();
         data.addAll(list);
+        adapter.notifyDataSetChanged();
+
+        ListView listView = findViewById(R.id.list);
+        listView.smoothScrollToPositionFromTop(adapter.getCount(), 0, 0);
+    }
+
+    public static class Event {
+
+    }
+
+    public void onEvent(Event ev) {
+        加载历史消息();
     }
 }

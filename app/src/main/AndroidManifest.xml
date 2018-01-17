@@ -74,7 +74,7 @@
             android:exported="true"
             android:label="PushService"
             android:process=":pushservice"/>
-        <service android:name="com.alert.service.DemoIntentService"/>
+        <service android:name="com.alert.service.PushReceiveService"/>
         <!--个推 end-->
     </application>
 </manifest>
