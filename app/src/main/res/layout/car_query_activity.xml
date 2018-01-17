@@ -39,7 +39,7 @@
                     android:layout_width="0px"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="abc8989898xxdfe"/>
+                    android:text="100714"/>
 
                 <Button
                     android:id="@+id/query"
@@ -48,6 +48,7 @@
             </LinearLayout>
 
             <FrameLayout
+                android:id="@+id/guiji"
                 style="@style/match_width_wrap_height"
                 android:layout_height="180dp"/>
 

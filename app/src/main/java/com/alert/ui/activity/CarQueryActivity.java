@@ -1,5 +1,6 @@
 package com.alert.ui.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ public class CarQueryActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void onActivityCreate() {
-        setOnClickListeners(new int[]{R.id.query}, this);
+        setOnClickListeners(new int[]{R.id.query, R.id.guiji}, this);
     }
 
     private void 填充页面信息(RFIDQueryResult result) {
@@ -61,11 +62,19 @@ public class CarQueryActivity extends BaseActivity implements View.OnClickListen
         ApiModule.通过车牌号或RFID号获取车辆信息(id, new 查询回调(this));
     }
 
+    private void 轨迹() {
+        Intent intent = new Intent(this, DriverQueryActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.query:
                 查询();
+                break;
+            case R.id.guiji:
+                轨迹();
                 break;
         }
     }
