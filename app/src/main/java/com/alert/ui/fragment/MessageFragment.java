@@ -48,7 +48,7 @@ public class MessageFragment extends BaseFragment {
         adapter.notifyDataSetChanged();
 
         ListView listView = findViewById(R.id.list);
-        listView.smoothScrollToPositionFromTop(adapter.getCount(), 0, 0);
+        listView.smoothScrollToPosition(adapter.getCount() + 1);
     }
 
     public static class Event {
@@ -56,6 +56,6 @@ public class MessageFragment extends BaseFragment {
     }
 
     public void onEvent(Event ev) {
-        加载历史消息();
+        getActivity().runOnUiThread(() -> 加载历史消息());
     }
 }

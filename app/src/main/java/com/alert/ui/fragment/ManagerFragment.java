@@ -90,17 +90,7 @@ public class ManagerFragment extends BaseFragment implements View.OnClickListene
                 break;
             }
             case R.id.push:
-                ApiModule.推送(PushManager.getInstance().getClientid(getActivity()), new BaseRequestListener(this) {
-                    @Override
-                    protected void onSuccess(Object parent, String data) {
-                        Log.e("push", data + "");
-                    }
-
-                    @Override
-                    protected void onFailed(Object parent, HttpError error) {
-
-                    }
-                });
+                ApiModule.推送(PushManager.getInstance().getClientid(getActivity()), null);
                 break;
         }
     }

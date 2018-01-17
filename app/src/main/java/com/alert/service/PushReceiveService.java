@@ -5,11 +5,12 @@ import android.util.Log;
 
 import com.alert.App;
 import com.alert.model.Notice;
-import com.alert.model.NoticeDao;
 import com.alert.ui.fragment.MessageFragment;
+import com.alert.utils.MediaManager;
 import com.igexin.sdk.GTIntentService;
 import com.igexin.sdk.message.GTCmdMessage;
 import com.igexin.sdk.message.GTTransmitMessage;
+import com.rctd.platfrom.rcpingan.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +54,7 @@ public class PushReceiveService extends GTIntentService {
         App.getInstance().getDaoSession().getNoticeDao()
             .insert(new Notice(null, jsonObject.getString("message"), new Date()));
         EventBus.getDefault().post(new MessageFragment.Event());
+        MediaManager.play(R.raw.num0);
     }
 
     @Override
