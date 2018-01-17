@@ -22,8 +22,41 @@
             android:text="@string/tiaojian_query"/>
     </RelativeLayout>
 
-    <com.baidu.mapapi.map.MapView
-        android:id="@+id/map"
+    <FrameLayout
         style="@style/match_width_match_height"
-        android:clickable="true"/>
+        android:layout_weight="1">
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/map"
+            style="@style/match_width_match_height"
+            android:clickable="true"/>
+
+        <RelativeLayout
+            android:id="@+id/list_container"
+            style="@style/match_width_match_height"
+            android:background="@android:color/white"
+            android:visibility="gone">
+            <ListView
+                android:id="@+id/list"
+                style="@style/match_width_match_height"
+                android:divider="@null"/>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/match_width_wrap_height"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/map_mode"
+            style="@style/wrap_width_match_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="地图"/>
+
+        <TextView
+            android:id="@+id/list_mode"
+            style="@style/wrap_width_match_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="列表"/>
+    </LinearLayout>
 </LinearLayout>

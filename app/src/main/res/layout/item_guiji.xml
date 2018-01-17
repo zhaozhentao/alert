@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/match_width_wrap_height"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/address"
+        style="@style/wrap_width_wrap_height"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        tools:text="不知道显示x"/>
+
+    <TextView
+        android:id="@+id/time"
+        style="@style/wrap_width_wrap_height"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        tools:text="不知道显示x"/>
+</LinearLayout>

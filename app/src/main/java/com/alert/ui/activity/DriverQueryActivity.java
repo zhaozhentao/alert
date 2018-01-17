@@ -4,12 +4,14 @@ import android.content.Context;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alert.base.BaseRequestListener;
 import com.alert.entity.Tracks;
 import com.alert.module.ApiModule;
+import com.alert.ui.adapter.GuijiAdapter;
 import com.alert.utils.LocationUtils;
 import com.alert.utils.MarkerManager;
 import com.alert.utils.TrackLineManager;
@@ -22,6 +24,8 @@ import com.baidu.mapapi.model.LatLng;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.rctd.platfrom.rcpingan.R;
+
+import java.util.List;
 
 import base.core.http.response.HttpError;
 
@@ -44,7 +48,7 @@ public class DriverQueryActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     protected void onActivityCreate() {
-        setOnClickListeners(new int[]{R.id.query}, this);
+        setOnClickListeners(new int[]{R.id.query, R.id.map_mode, R.id.list_mode}, this);
 
         初始化百度地图();
     }
@@ -74,11 +78,30 @@ public class DriverQueryActivity extends BaseActivity implements View.OnClickLis
         new DialogController(this);
     }
 
+    private void 地图模式() {
+        findViewById(R.id.list_container).setVisibility(View.GONE);
+    }
+
+    private void 列表模式() {
+        findViewById(R.id.list_container).setVisibility(View.VISIBLE);
+    }
+
+    private void 显示轨迹列表(List<Tracks.VehsTracksBean> vehsTracks) {
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(new GuijiAdapter(this, vehsTracks));
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.query:
                 条件搜索弹窗();
+                break;
+            case R.id.map_mode:
+                地图模式();
+                break;
+            case R.id.list_mode:
+                列表模式();
                 break;
         }
     }
@@ -145,6 +168,8 @@ public class DriverQueryActivity extends BaseActivity implements View.OnClickLis
             parent.baiduMap.clear();
             parent.markerManager = new MarkerManager(tracks.vehsTracks, parent.baiduMap, parent);
             new TrackLineManager(tracks.vehsTracks, parent.baiduMap);
+
+            parent.显示轨迹列表(tracks.vehsTracks);
         }
 
         @Override
