@@ -123,7 +123,7 @@
                     style="@style/add_duka_title"
                     android:text="@string/quyuma"/>
 
-                <EditText
+                <Button
                     android:id="@+id/cardReaderAreaCode"
                     style="@style/add_duka_content"/>
             </LinearLayout>
@@ -145,8 +145,8 @@
                     style="@style/add_duka_title"
                     android:text="@string/suoshubumen"/>
 
-                <EditText
-                    android:id="@+id/managerUserId"
+                <Button
+                    android:id="@+id/department"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
@@ -156,8 +156,8 @@
                     style="@style/add_duka_title"
                     android:text="@string/guanlirenyuan"/>
 
-                <EditText
-                    android:id="@+id/department"
+                <Button
+                    android:id="@+id/managerUserId"
                     style="@style/add_duka_content"/>
             </LinearLayout>
 
