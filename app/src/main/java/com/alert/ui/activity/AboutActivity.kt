@@ -40,7 +40,7 @@ class AboutActivity : BaseActivity(), View.OnClickListener {
         val dialog = CustomDialog(this)
         dialog.setTitle("title")
         dialog.setContent("拨打电话 020-23328999")
-        dialog.setOK("拨打") { v ->
+        dialog.setOK("拨打") { _ ->
             dialog.dismiss()
             val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:020-23328999"))
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

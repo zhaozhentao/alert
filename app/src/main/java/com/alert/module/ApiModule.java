@@ -196,10 +196,10 @@ public class ApiModule {
             .send(listener);
     }
 
-    public static void 推送(String pushId, HttpListener listener) {
+    public static void 推送(String pushId) {
         new BaseRequest(Urls.推送, HttpMethod.POST)
             .addHeader("clientId", PushManager.getInstance().getClientid(App.getInstance()))
             .addParam("pushId", pushId)
-            .send(listener);
+            .send(null);
     }
 }

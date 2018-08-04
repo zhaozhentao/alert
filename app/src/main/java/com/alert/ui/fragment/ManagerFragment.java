@@ -3,7 +3,6 @@ package com.alert.ui.fragment;
 import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,7 +89,7 @@ public class ManagerFragment extends BaseFragment implements View.OnClickListene
                 break;
             }
             case R.id.push:
-                ApiModule.推送(PushManager.getInstance().getClientid(getActivity()), null);
+                ApiModule.推送(PushManager.getInstance().getClientid(getActivity()));
                 break;
         }
     }
